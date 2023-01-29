@@ -1,6 +1,7 @@
 package welcome
 
 import (
+	"fmt"
 	"net/http"
 	"reimanexample/service/internal/routing"
 
@@ -11,6 +12,6 @@ const Path = "/welcome"
 const Method = routing.GET
 
 func HandleRequest(c *gin.Context) {
-
-	c.String(http.StatusOK, "Welcome!")
+	name := c.Query("name")
+	c.JSON(http.StatusOK, gin.H{"msg": fmt.Sprintf("Welcome %v!", name)})
 }
