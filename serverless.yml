@@ -1,0 +1,40 @@
+service: gardenservice
+
+provider:
+  name: aws
+  runtime: go1.x
+  stage: dev
+  region: us-east-1
+  memorySize: 128 # 1MB increments, minimum 128, affects pricing
+  environment:
+    ALLOWED_ORIGIN: http://gardenservice-frontend.s3-website-us-east-1.amazonaws.com
+
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/**
+
+# Frontend deploy config
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  client:
+    bucketName: gardenservice-frontend # Must be globally unique, if you're setting a custom domain, then use that. (ex: example.com)
+    distributionFolder: frontend/build
+
+# Endpoint config
+functions:
+  Welcome:
+    handler: bin/welcome
+    events:
+      - http:
+          path: /welcome
+          method: GET
+          cors: true # This allows OPTION requests to pass trough the AWS API Gateway
+
+
+# Frontend deploy plugin config
+plugins:
+  - serverless-finch
+resources:
+  - ${file(resources/s3bucket.yml)} #s3 config file

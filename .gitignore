@@ -5,10 +5,10 @@
 /frontend/node_modules
 /.pnp
 .pnp.js
-
+/bin
 # testing
 /coverage
-
+/frontend/build
 # production
 /build
 

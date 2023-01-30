@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "serverless": "^3.27.0",
+    "sls": "^0.1.0"
+  },
+  "devDependencies": {
+    "serverless-finch": "^4.0.0"
+  }
+}

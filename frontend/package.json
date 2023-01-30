@@ -22,7 +22,8 @@
   },
   "scripts": {
     "start": "cross-env REACT_APP_API=http://localhost:8080 react-scripts start",
-    "build": "react-scripts build",
+    "build:local": "cross-env REACT_APP_API=http://localhost:8080 react-scripts build",
+    "build": "cross-env REACT_APP_API=https://5y1c4q5ckd.execute-api.us-east-1.amazonaws.com/dev react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

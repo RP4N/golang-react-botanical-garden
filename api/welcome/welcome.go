@@ -3,7 +3,7 @@ package welcome
 import (
 	"fmt"
 	"net/http"
-	"reimanexample/service/internal/routing"
+	"reimanexample/gardenService/internal/routing"
 
 	"github.com/gin-gonic/gin"
 )
