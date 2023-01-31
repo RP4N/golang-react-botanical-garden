@@ -42,6 +42,7 @@ func AddRoute(engine *gin.Engine, path string, method string, fn gin.HandlerFunc
 func CORS() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		allowedOrigin := os.Getenv("ALLOWED_ORIGIN")
+		println("allowedOrigin: ", allowedOrigin)
 		c.Writer.Header().Set("Access-Control-Allow-Origin", allowedOrigin)
 		c.Writer.Header().Set("Access-Control-Allow-Credentials", "true")
 		c.Writer.Header().Set("Access-Control-Allow-Headers", "Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, accept, origin, Cache-Control, X-Requested-With")

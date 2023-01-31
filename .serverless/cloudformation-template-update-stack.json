@@ -161,7 +161,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/gardenservice/dev/1675047069004-2023-01-30T02:51:09.004Z/gardenservice.zip"
+          "S3Key": "serverless/gardenservice/dev/1675204229756-2023-01-31T22:30:29.756Z/gardenservice.zip"
         },
         "Handler": "bin/welcome",
         "Runtime": "go1.x",
@@ -184,14 +184,14 @@
         "WelcomeLogGroup"
       ]
     },
-    "WelcomeLambdaVersiongWinkgXIhV2oS57xRIsfe9R3gdmoG0c4AhPezIHIE": {
+    "WelcomeLambdaVersion0648vMOG13WMzrU8kaYkYZ3rtrCA8tyTIHrwm4AgjU": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "WelcomeLambdaFunction"
         },
-        "CodeSha256": "NYqzUCyfkL9nONYaSAWXNB34dI8NwV1Y66VFir7SZTA="
+        "CodeSha256": "TcSC9CtRxSoA3K6fwhRKavJuoXC41h/3RCK7fv/nCY0="
       }
     },
     "ApiGatewayRestApi": {
@@ -312,7 +312,7 @@
         "WelcomeLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1675047066020": {
+    "ApiGatewayDeployment1675204228352": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -401,7 +401,7 @@
     "WelcomeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "WelcomeLambdaVersiongWinkgXIhV2oS57xRIsfe9R3gdmoG0c4AhPezIHIE"
+        "Ref": "WelcomeLambdaVersion0648vMOG13WMzrU8kaYkYZ3rtrCA8tyTIHrwm4AgjU"
       },
       "Export": {
         "Name": "sls-gardenservice-dev-WelcomeLambdaFunctionQualifiedArn"
